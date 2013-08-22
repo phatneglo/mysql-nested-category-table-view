@@ -27,7 +27,35 @@ A good solution for breadcrumbs or if you want to create a category tree
 or a good listing for your backend.
 
 
-<b>MORE MYSQL EXAMPLE </b><br>
+<b>ORIGNAL TABLE DATA</b><br>
+<pre>
+ORIGINAL TABLE DATA
+
+SELECT * FROM categories
+
++-------------+-----------------------+-------------+-----------+
+| category_id | category              | description | parent_id |
++-------------+-----------------------+-------------+-----------+
+|           1 | Asia                  | NULL        |         0 |
+|           2 | North America         | NULL        |         0 |
+|           3 | Philippines           | NULL        |         1 |
+|           4 | Singapore             | NULL        |         1 |
+|           5 | Korea                 | NULL        |         1 |
+|           6 | United States         | NULL        |         2 |
+|           7 | Mexico                | NULL        |         2 |
+|           8 | New York              | NULL        |         6 |
+|           9 | Colorado              | NULL        |         6 |
+|          10 | Manila                | NULL        |         3 |
+|          11 | Pampanga              | NULL        |         3 |
+|          12 | Angeles City          | NULL        |        11 |
+|          13 | San Fernando          | NULL        |        11 |
+|          14 | Kingston              | NULL        |         6 |
+|          15 | Poughkeepsie?Newburgh | NULL        |         6 |
++-------------+-----------------------+-------------+-----------+
+15 rows in set (0.07 sec)
+</pre>
+
+<b>VIEW QUERY Examples</b>
 <pre>
 SELECT 
   other_cat_view.CatID,
@@ -36,10 +64,7 @@ SELECT
   other_cat_view.CatLevel
 FROM
   other_cat_view
-</pre>
-<br><b>RESULT</b>
 
-<pre>
 +-------+-----------------------+----------+----------+
 | CatID | CatName               | ParentID | CatLevel |
 +-------+-----------------------+----------+----------+
@@ -61,7 +86,6 @@ FROM
 +-------+-----------------------+----------+----------+
 15 rows in set (0.01 sec)
 </pre>
-<br><br>
 
 <pre>
 SELECT 
@@ -70,10 +94,7 @@ SELECT
   other_cat_view.CatCaption
 FROM
   other_cat_view
-</pre>
-<br><b>RESULT</b>
-<br>
-<pre>
+
 +-------+----------+-------------------------------------------------------+
 | CatID | ParentID | CatCaption                                            |
 +-------+----------+-------------------------------------------------------+
