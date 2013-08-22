@@ -6,21 +6,21 @@ if you are trying to display a good list for your website it can give you someth
 
 <b>EXAMPLE<b>
 <pre>
-Asia
-Asia > Korea
-Asia > Philippines
-Asia > Philippines > Manila
-Asia > Philippines > Pampanga
-Asia > Philippines > Pampanga > Angeles City
-Asia > Philippines > Pampanga > San Fernando
-Asia > Singapore
-North America
-North America > Mexico
-North America > United States
-North America > United States > Colorado
-North America > United States > Kingston
-North America > United States > New York
-North America > United States > Poughkeepsie-Newburgh
+  Asia
+  --| Korea
+  --| Philippines
+  ------| Manila
+  ------| Pampanga
+  ---------| Angeles City
+  ---------| San Fernando
+  --| Singapore
+  North America
+  --| Mexico
+  --| United States
+  ------| Colorado
+  ------| New York
+  ---------| Kingston
+  ---------| Poughkeepsie-Newburgh
 </pre>
 <br>
 A good solution for breadcrumbs or if you want to create a category tree
@@ -47,8 +47,8 @@ SELECT * FROM categories
 |          11 | Pampanga              | NULL        |         3 |
 |          12 | Angeles City          | NULL        |        11 |
 |          13 | San Fernando          | NULL        |        11 |
-|          14 | Kingston              | NULL        |         6 |
-|          15 | Poughkeepsie?Newburgh | NULL        |         6 |
+|          14 | Kingston              | NULL        |         8 |
+|          15 | Poughkeepsie-Newburgh | NULL        |         8 |
 +-------------+-----------------------+-------------+-----------+
 15 rows in set (0.07 sec)
 </pre>
@@ -79,8 +79,8 @@ FROM
 |     6 | United States         |        2 |        2 |
 |     9 | Colorado              |        6 |        3 |
 |    14 | Kingston              |        6 |        3 |
-|     8 | New York              |        6 |        3 |
-|    15 | Poughkeepsie-Newburgh |        6 |        3 |
+|     8 | New York              |        8 |        3 |
+|    15 | Poughkeepsie-Newburgh |        8 |        3 |
 +-------+-----------------------+----------+----------+
 15 rows in set (0.01 sec)
 </pre>
@@ -93,25 +93,25 @@ SELECT
 FROM
   other_cat_view
 
-+-------+----------+-------------------------------------------------------+
-| CatID | ParentID | CatCaption                                            |
-+-------+----------+-------------------------------------------------------+
-|     1 |        0 | Asia                                                  |
-|     5 |        1 | Asia > Korea                                          |
-|     3 |        1 | Asia > Philippines                                    |
-|    10 |        3 | Asia > Philippines > Manila                           |
-|    11 |        3 | Asia > Philippines > Pampanga                         |
-|    12 |       11 | Asia > Philippines > Pampanga > Angeles City          |
-|    13 |       11 | Asia > Philippines > Pampanga > San Fernando          |
-|     4 |        1 | Asia > Singapore                                      |
-|     2 |        0 | North America                                         |
-|     7 |        2 | North America > Mexico                                |
-|     6 |        2 | North America > United States                         |
-|     9 |        6 | North America > United States > Colorado              |
-|    14 |        6 | North America > United States > Kingston              |
-|     8 |        6 | North America > United States > New York              |
-|    15 |        6 | North America > United States > Poughkeepsie-Newburgh |
-+-------+----------+-------------------------------------------------------+
++-------+----------+------------------------------------------------------------------+
+| CatID | ParentID | CatCaption                                                       |
++-------+----------+------------------------------------------------------------------+
+|     1 |        0 | Asia                                                             |
+|     5 |        1 | Asia > Korea                                                     |
+|     3 |        1 | Asia > Philippines                                               |
+|    10 |        3 | Asia > Philippines > Manila                                      |
+|    11 |        3 | Asia > Philippines > Pampanga                                    |
+|    12 |       11 | Asia > Philippines > Pampanga > Angeles City                     |
+|    13 |       11 | Asia > Philippines > Pampanga > San Fernando                     |
+|     4 |        1 | Asia > Singapore                                                 |
+|     2 |        0 | North America                                                    |
+|     7 |        2 | North America > Mexico                                           |
+|     6 |        2 | North America > United States                                    |
+|     9 |        6 | North America > United States > Colorado                         |
+|     8 |        6 | North America > United States > New York                         |
+|    14 |        8 | North America > United States > New York > Kingston              |
+|    15 |        8 | North America > United States > New York > Poughkeepsie-Newburgh |
++-------+----------+------------------------------------------------------------------+
 15 rows in set (0.01 sec)
 </pre>
 
