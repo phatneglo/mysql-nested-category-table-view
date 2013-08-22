@@ -72,9 +72,9 @@ SELECT CatID, CatName, ParentID, CatLevel FROM CatHierarchyView
 |     7 | Mexico                |        2 |        2 |
 |     6 | United States         |        2 |        2 |
 |     9 | Colorado              |        6 |        3 |
-|    14 | Kingston              |        6 |        3 |
-|     8 | New York              |        8 |        3 |
-|    15 | Poughkeepsie-Newburgh |        8 |        3 |
+|     8 | New York              |        6 |        3 |
+|    14 | Kingston              |        8 |        4 |
+|    15 | Poughkeepsie-Newburgh |        8 |        4 |
 +-------+-----------------------+----------+----------+
 15 rows in set (0.01 sec)
 </pre>
