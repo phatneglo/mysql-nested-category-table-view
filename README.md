@@ -50,18 +50,12 @@ SELECT * FROM categories
 |          14 | Kingston              | NULL        |         8 |
 |          15 | Poughkeepsie-Newburgh | NULL        |         8 |
 +-------------+-----------------------+-------------+-----------+
-15 rows in set (0.07 sec)
+15 rows in set (0.01 sec)
 </pre>
 
 <b>VIEW QUERY Examples</b>
 <pre>
-SELECT 
-  other_cat_view.CatID,
-  other_cat_view.CatName,
-  other_cat_view.ParentID,
-  other_cat_view.CatLevel
-FROM
-  other_cat_view
+SELECT CatID, CatName, ParentID, CatLevel FROM CatHierarchyView
 
 +-------+-----------------------+----------+----------+
 | CatID | CatName               | ParentID | CatLevel |
@@ -86,12 +80,7 @@ FROM
 </pre>
 
 <pre>
-SELECT 
-  other_cat_view.CatID,
-  other_cat_view.ParentID,
-  other_cat_view.CatCaption
-FROM
-  other_cat_view
+SELECT CatID, ParentID, CatCaption FROM CatHierarchyView
 
 +-------+----------+------------------------------------------------------------------+
 | CatID | ParentID | CatCaption                                                       |
