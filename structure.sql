@@ -1,4 +1,3 @@
-
 #
 # Structure for the `categories` table : 
 #
@@ -13,11 +12,11 @@ CREATE TABLE `categories` (
 ) ;
 
 #
-# Definition for the `other_cat_view` view : 
+# Definition for the `CatHierarchyView` view : 
 # NOTE THIS IS UP TO LEVEL 4 Category Just Adjust it if you want to add more
 #
 
-CREATE VIEW other_cat_view AS 
+CREATE VIEW CatHierarchyView AS 
   select 
     `lvl4`.`category_id` AS `CatID`,
     (case when (ifnull(`lvl1`.`category_id`,'NULL') <> 'NULL') then 4 when (ifnull(`lvl2`.`category_id`,'NULL') <> 'NULL') then 3 when (ifnull(`lvl3`.`category_id`,'NULL') <> 'NULL') then 2 when (ifnull(`lvl4`.`category_id`,'NULL') <> 'NULL') then 1 end) AS `CatLevel`,
@@ -52,6 +51,6 @@ INSERT INTO `categories` (`category_id`, `category`, `description`, `parent_id`)
   (11,'Pampanga',NULL,3),
   (12,'Angeles City',NULL,11),
   (13,'San Fernando',NULL,11),
-  (14,'Kingston',NULL,6),
-  (15,'Poughkeepsie–Newburgh',NULL,6);
+  (14,'Kingston',NULL,8),
+  (15,'Poughkeepsie–Newburgh',NULL,8);
   
