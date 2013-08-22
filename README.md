@@ -29,8 +29,6 @@ or a good listing for your backend.
 
 <b>ORIGNAL TABLE DATA</b><br>
 <pre>
-ORIGINAL TABLE DATA
-
 SELECT * FROM categories
 
 +-------------+-----------------------+-------------+-----------+
