@@ -1,0 +1,21 @@
+{
+  "name":         "phatview",
+  "version":      "1.0.0",
+  "author":       "@phatneglo",
+  "homepage":     "https://github.com/phatneglo/mysql-nested-category-table-view",
+  "description":  "Query that allows you to have a good view on your nested category structure.",
+  "main": [
+    "structure.sql",
+    "README.md"
+  ],
+  "keywords": [
+    "mysql",
+    "nested-category",
+    "table-view",
+    "phatneglo"
+  ],
+  "license": "GNU",
+  "ignore": [
+    ".gitignore"
+  ]
+}
